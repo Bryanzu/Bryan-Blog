@@ -25,7 +25,7 @@ login_manager.login_view = "login"
 Base = declarative_base()
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URL'] = os.getenv("DATABASE_URL")
+app.config['SQLALCHEMY_DATABASE_URL'] = os.getenv("DATABASE_URL", "sqlite:///blog.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
